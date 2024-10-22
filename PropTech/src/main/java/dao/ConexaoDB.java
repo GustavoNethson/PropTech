@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class ConexaoDB {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/nome_do_banco"; // Substitua pelo nome do seu banco
-    private static final String USER = "seu_usuario";
-    private static final String PASSWORD = "sua_senha";
+    private static final String URL = "jdbc:mysql://localhost:5434/PropTechDB";
+    private static final String USER = "postgres";
+    private static final String PASSWORD = "Unipar";
 
     public static Connection getConexao() {
         try {
