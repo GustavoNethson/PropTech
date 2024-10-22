@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tabelas</title>
+</head>
+<body>
+<h1>Lista de Tabelas</h1>
+<a href="/tabelas/new">Nova Tabela</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome do Imóvel</th>
+        <th>Mês</th>
+        <th>Valor Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tabela : ${tabelas}">
+        <td th:text="${tabela.nIdLanc}">ID</td>
+        <td th:text="${tabela.stNomImov}">Nome do Imóvel</td>
+        <td th:text="${tabela.stMesComp}">Mês</td>
+        <td th:text="${tabela.dValTotal}">Valor Total</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

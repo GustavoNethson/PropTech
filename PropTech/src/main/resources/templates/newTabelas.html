@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nova Tabela</title>
+</head>
+<body>
+<h1>Nova Tabela</h1>
+<form action="#" th:action="@{/tabelas}" th:object="${tabela}" method="post">
+    <div>
+        <label>Nome do Imóvel:</label>
+        <input type="text" th:field="*{stNomImov}"/>
+    </div>
+    <div>
+        <label>Mês:</label>
+        <input type="text" th:field="*{stMesComp}"/>
+    </div>
+    <div>
+        <label>Valor do Aluguel:</label>
+        <input type="text" th:field="*{dValAlug}"/>
+    </div>
+    <div>
+        <label>Valor Total:</label>
+        <input type="text" th:field="*{dValTotal}"/>
+    </div>
+    <div>
+        <button type="submit">Salvar</button>
+    </div>
+</form>
+</body>
+</html>
