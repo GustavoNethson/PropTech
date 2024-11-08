@@ -16,14 +16,14 @@ import java.util.Optional;
 public class TabelaController {
 
     @Autowired
-    private TabelaService tarefaService;
+    private TabelaService tabelaService;
 
    @Autowired
     private UsuarioService usuarioService;
 
     @PostMapping
     public String salvarDados(@ModelAttribute("tabela") Tabela tabela) {
-        tarefaService.salvar(tabela);
+        tabelaService.salvar(tabela);
         return "redirect:/tabela/usuario/" + tabela.getUsuario().getId();
     }
 

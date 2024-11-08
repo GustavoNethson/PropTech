@@ -9,4 +9,8 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
 
     void deleteBynIdUsu(Long nIdUsu);
+
+    Usuario findByStNomeUsu(String stNomeUsu);
+
+
 }

@@ -14,25 +14,11 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-
-    @GetMapping("/form")
-    public String exibirFormUsuario(Model model) {
-        model.addAttribute("usuario", new Usuario());
-        return "usuario-form";
-    }
-
-
-    @PostMapping("/salvar")
-    public String salvarUsuario(@ModelAttribute("usuario") Usuario usuario) {
-        usuarioService.salvarUsuario(usuario);
-        return "redirect:/usuarios/listar";
-    }
-
-    @GetMapping("/listar")
+    @GetMapping("/usuários")
     public String listarUsuarios(Model model) {
         List<Usuario> usuarios = usuarioService.listarUsuarios();
-        model.addAttribute("usuarios", usuarios);
-        return "usuario-lista";
+        model.addAttribute("usuários", usuarios);
+        return "lista-usuários";
     }
 
     @GetMapping("/editar/{id}")
@@ -42,10 +28,29 @@ public class UsuarioController {
         return "usuario-form";
     }
 
-
     @GetMapping("/deletar/{id}")
     public String deletarUsuario(@PathVariable("id") Long nIdUsu) {
         usuarioService.deletarUsuario(nIdUsu);
         return "redirect:/usuarios/listar";
+    }
+
+
+    @PostMapping("/cadsatrar")
+    public String salvarUsuario(@ModelAttribute("usuario") Usuario usuario) {
+        usuarioService.salvarUsuario(usuario);
+        return "redirect:/usuarios/lista-usuários";
+    }
+
+
+    @PostMapping("/login")
+    public String login(@RequestParam String email, @RequestParam String senha, Model model) {
+        Usuario usuario = usuarioService.autenticar(email, senha);
+        if (usuario != null) {
+            return "welcome";
+        } else {
+            model.addAttribute("erro", "Credenciais inválidas. Tente novamente.");
+            return "login";
+        }
+
     }
 }

@@ -22,12 +22,19 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-    public Optional<Usuario> buscarPornIdUsu(Long nIdUsu) {
-        return usuarioRepository.findById(nIdUsu);
-    }
-
     public void deletarUsuario(Long nIdUsu) {
         usuarioRepository.deleteBynIdUsu(nIdUsu);
     }
 
+    public Usuario autenticar(String stNomeUsu, String stSenhaUsu) {
+        Usuario usuario = usuarioRepository.findByStNomeUsu(stNomeUsu);
+        if (usuario != null && usuario.getStSenUsu().equals(stSenhaUsu)) {
+            return usuario;
+        }
+        return null;
+    }
+
+    public Optional<Usuario> buscarPornIdUsu(Long nIdUsu) {
+        return null;
+    }
 }

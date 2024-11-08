@@ -20,4 +20,36 @@ public class Usuario {
     private String stEmailUsu;
     private String stSenUsu;
 
+
+    public Long getnIdUsu() {
+        return nIdUsu;
+    }
+
+    public void setnIdUsu(Long nIdUsu) {
+        this.nIdUsu = nIdUsu;
+    }
+
+    public String getStNomeUsu() {
+        return stNomeUsu;
+    }
+
+    public void setStNomeUsu(String stNomeUsu) {
+        this.stNomeUsu = stNomeUsu;
+    }
+
+    public String getStEmailUsu() {
+        return stEmailUsu;
+    }
+
+    public void setStEmailUsu(String stEmailUsu) {
+        this.stEmailUsu = stEmailUsu;
+    }
+
+    public String getStSenUsu() {
+        return stSenUsu;
+    }
+
+    public void setStSenUsu(String stSenUsu) {
+        this.stSenUsu = stSenUsu;
+    }
 }
