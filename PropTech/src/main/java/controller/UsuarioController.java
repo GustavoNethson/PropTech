@@ -35,7 +35,7 @@ public class UsuarioController {
     }
 
 
-    @PostMapping("/cadsatrar")
+    @PostMapping("/salvar_usuario")
     public String salvarUsuario(@ModelAttribute("usuario") Usuario usuario) {
         usuarioService.salvarUsuario(usuario);
         return "redirect:/usuarios/lista-usuários";
@@ -43,8 +43,8 @@ public class UsuarioController {
 
 
     @PostMapping("/login")
-    public String login(@RequestParam String email, @RequestParam String senha, Model model) {
-        Usuario usuario = usuarioService.autenticar(email, senha);
+    public String login(@RequestParam String stNomeUsu, @RequestParam String stSenhaUsu, Model model) {
+        Usuario usuario = usuarioService.autenticar(stNomeUsu, stSenhaUsu);
         if (usuario != null) {
             return "welcome";
         } else {
