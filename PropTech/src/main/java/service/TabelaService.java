@@ -3,7 +3,7 @@ package service;
 import model.Tabela;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import respositrory.TabelaRepository;
+import repository.TabelaRepository;
 
 @Service
 public class TabelaService {

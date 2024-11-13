@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import service.UsuarioService;
 
 import java.util.List;
+
 import java.util.Optional;
 @Controller
 public class UsuarioController {
@@ -42,7 +43,7 @@ public class UsuarioController {
     }
 
 
-    @PostMapping("/login")
+    @PostMapping("/loginf")
     public String login(@RequestParam String stNomeUsu, @RequestParam String stSenhaUsu, Model model) {
         Usuario usuario = usuarioService.autenticar(stNomeUsu, stSenhaUsu);
         if (usuario != null) {
@@ -52,5 +53,10 @@ public class UsuarioController {
             return "login";
         }
 
+    }
+
+    @GetMapping("/loginf")
+    public String login() {
+        return "Login-form";
     }
 }

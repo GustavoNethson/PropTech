@@ -3,7 +3,7 @@ package service;
 import model.Imovel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import respositrory.ImovelRepository;
+import repository.ImovelRepository;
 
 @Service
 public class ImovelService {

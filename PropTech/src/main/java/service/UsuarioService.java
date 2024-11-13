@@ -3,7 +3,9 @@ package service;
 import model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import respositrory.UsuarioRepository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import repository.UsuarioRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +16,7 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @PostMapping("/salvar")
     public Usuario salvarUsuario(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
